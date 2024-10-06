@@ -30,7 +30,7 @@ const handleSignUp = async (req, res) => {
             profileImage:upload.secure_url
         })
 
-        const accessToken = jwt.sign({user},process.env.secretkey,{expiresIn:'36000s'})
+        const accessToken = jwt.sign({user},process.env.secretkey,{expiresIn:'3600000000s'})
         
         res.send({
             message:'User created successfully..',
@@ -56,7 +56,7 @@ const handleLogIn = async (req, res) => {
             return;
         }
 
-        const accessToken = jwt.sign({user},process.env.secretkey,{expiresIn:'3600s'})
+        const accessToken = jwt.sign({user},process.env.secretkey,{expiresIn:'360000000s'})
         
         res.send({
             message:'Logged In successfully..',
